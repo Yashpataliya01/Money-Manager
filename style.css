@@ -1,0 +1,396 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333; 
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  background-image: url(https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px; 
+  padding: 40px;
+  text-align: center;
+  color: rgb(108, 122, 227);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  font-size: 3em;
+}
+
+.title:hover {
+  transform: translateY(-5px);
+}
+
+.title-disc h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  letter-spacing: 2px;
+}
+
+.title-disc p {
+  font-size: 1.2em;
+  color: #ddd;
+}
+
+.balance-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.money-detail {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #fff; 
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  flex: 1;
+  margin: 10px;
+}
+
+.money-detail:hover {
+  transform: translateY(-5px);
+}
+
+.balance-image {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.balance-image:hover {
+  transform: scale(1.1);
+}
+
+.amount-card {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  height: 94px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.amount-para {
+  font-weight: bold;
+  color: #6faec9; 
+  margin-bottom: 10px;
+}
+
+.amount {
+  font-size: 2em;
+  color: #333;
+  margin-top: -6px;
+}
+
+.add-transaction {
+  margin-top: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.label {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.input-box {
+  width: calc(100% - 20px);
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5; 
+  color: #333;
+}
+
+.input-box[type="number"]::-webkit-inner-spin-button,
+.input-box[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-box[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select.input-box {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.btn {
+  display: inline-block;
+  width: auto;
+  padding: 15px 30px;
+  background: linear-gradient(to right, #a7d3a7, #6faec9); 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #6faec9, #a7d3a7); 
+}
+
+.history {
+  list-style-type: none;
+  padding: 0;
+}
+
+.history li {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history li button {
+  background-color: #ff5a5f;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.history li button:hover {
+  background-color: #ff4449;
+}
+
+.transaction-info {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.transaction-title {
+  margin-bottom: 5px;
+}
+
+.transaction-details {
+  color: #666;
+  font-size: 0.9em;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .title-disc h1 {
+    font-size: 2.5em;
+  }
+  
+  .title-disc p {
+    font-size: 1.1em;
+  }
+
+  .balance-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .amount {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .title-disc h1 {
+    font-size: 2em;
+  }
+  
+  .title-disc p {
+    font-size: 1em;
+  }
+
+  .balance-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .amount {
+    font-size: 1.3em;
+  }
+
+  .balance-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .money-detail {
+    width: 90%;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title-disc h1 {
+    font-size: 1.8em;
+  }
+  
+  .title-disc p {
+    font-size: 0.9em;
+  }
+
+  .balance-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .amount {
+    font-size: 1.2em;
+  }
+
+}
+
+.history-container {
+  margin-top: 30px;
+}
+
+
+.bottom-card-heading {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.history-th {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6faec9; 
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
+  flex-wrap: wrap;
+  padding-right: 5em;
+}
+
+.history-table-head {
+  flex: 1;
+  text-align: start;
+  width: 10px;
+}
+
+.amount-th {
+  flex: 1.5;
+}
+
+.history li {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.history li button {
+  background-color: #ff5a5f;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.history li button:hover {
+  background-color: #ff4449;
+}
+
+.transaction-amount,
+.transaction-date,
+.transaction-type {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 10px; 
+}
+
+.transaction-title{
+  margin-right: -2vw;
+}
+
+.transaction-type {
+  margin-right: 0; 
+}
+
+@media screen and (max-width: 768px) {
+  .history-container {
+    margin-top: 20px;
+  }
+
+  .bottom-card-heading {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  .history-th {
+    padding: 10px;
+    padding-right: 2em;
+  }
+
+  .history-table-head {
+    flex: 1;
+    width: auto;
+  }
+
+  .amount-th {
+    flex: 1;
+  }
+
+  .history li {
+    padding: 10px;
+  }
+
+  .history li button {
+    padding: 5px 10px;
+  }
+
+  .transaction-amount,
+  .transaction-date,
+  .transaction-type {
+    flex-wrap: wrap;
+    margin-right: 0;
+  }
+
+  .transaction-title {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .transaction-type {
+    margin-right: 10px;
+  }
+}

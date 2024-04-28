@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Money Manager</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Money Manager</h1>
+    <div class="balance-card">
+      <div class="money-detail">
+        <img class="balance-image" src="https://assets.ccbp.in/frontend/react-js/money-manager/balance-image.png" alt="balance">
+        <div class="amount-card">
+          <p class="amount-para">Your Balance</p>
+          <p data-testid="balanceAmount" id="balance" class="amount">Rs 0</p>
+        </div>
+      </div>
+      <div class="income money-detail">
+        <img class="balance-image" src="https://assets.ccbp.in/frontend/react-js/money-manager/income-image.png" alt="income">
+        <div class="amount-card">
+          <p class="amount-para">Your Income</p>
+          <p data-testid="incomeAmount" id="income" class="amount">Rs 0</p>
+        </div>
+      </div>
+      <div class="expense money-detail">
+        <img class="balance-image" src="https://assets.ccbp.in/frontend/react-js/money-manager/expenses-image.png" alt="expenses">
+        <div class="amount-card">
+          <p class="amount-para">Your Expenses</p>
+          <p data-testid="expensesAmount" class="amount" id="expense">Rs 0</p>
+        </div>
+      </div>
+    </div>
+    <div class="add-transaction">
+      <h2 class="bottom-card-heading">Add Transaction</h2>
+      <div class="transaction-form">
+        <input class="input-box" id="title" type="text" placeholder="Title" value="">
+        <input class="input-box" id="amount" type="number" placeholder="Amount" value="">
+        <input class="input-box" id="date" type="date" placeholder="Date" value="">
+        <select class="input-box" id="type">
+          <option value="INCOME" selected="">Income</option>
+          <option value="EXPENSES">Expenses</option>
+        </select>
+        <button type="btn" class="btn">Add</button>
+      </div>
+    </div>
+    <div class="history-container">
+      <h2 class="bottom-card-heading">Transaction History</h2>
+      <div class="history-th">
+        <p class="history-table-head">Title</p>
+        <p class="history-table-head amount-th">Amount</p>
+        <p class="history-table-head amount-th">Date</p>
+        <p class="history-table-head">Type</p>
+      </div>
+      <ul class="history"></ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
